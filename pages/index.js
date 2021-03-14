@@ -1,65 +1,264 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Link from 'next/link';
+import Menu from '../components/Menu';
+
+import { 
+  makeStyles, 
+  Button, 
+  Typography, 
+  Container, 
+  Box,
+  Grid,
+  CardContent,
+  Card,
+  CardMedia,
+} from '@material-ui/core';
+
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    background: '#f0f0f4',
+    border: 'none',
+  },
+  spacing: {
+    marginLeft: theme.spacing(0.3),
+    marginRight: theme.spacing(0.3),
+  },
+  Container: {
+    marginTop: 25,
+  },
+  AppBar: {
+    background: '#000',
+    boxShadow: 'none',
+  },
+  box: {
+    background: '#000',
+    paddingTop: 65,
+    paddingBottom: 65,
+  },
+  textBox: {
+    color: '#fff',
+    marginBottom: 6,
+  },
+  media: {
+    height: 0,
+    paddingTop: '56.25%', // 16:9
+  },
+  CardContent: {
+    paddingLeft: 0,
+    marginLeft: 0,
+  }
+}));
 
 export default function Home() {
+  const classes = useStyles();
+ 
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Interface aomercado</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <main>
+        <div className={classes.root}>
+          <Menu />
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+          <Box className={classes.box}>
+            <Container fixed color="primary">
+              <Typography variant="h4" className={classes.textBox} component="h1">
+                A maior vitrine dos pequenos <br/> lojista do Ceará está aqui!
+              </Typography>
+              <Typography className={classes.textBox}>
+                As melhores promoções das lojas do Ceará está aqui! <br/><br/>
+                <Button color="inherit" variant="outlined">Criar minha conta</Button>
+              </Typography>
+            </Container>
+          </Box>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+          <Container fixed color="primary" className={classes.Container}>
+            <Typography variant="h6">
+              Ultimos produtos <br/>
+            </Typography>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+            <Grid container spacing={2}>
+              <Grid item xs={6} sm={3}>
+                <Card className={classes.root} variant="outlined">
+                  <CardMedia
+                    className={classes.media}
+                    image="http://aomercado.com.br/storage/images/image/1606351760.png"
+                    title="Paella dish"
+                  />
+                  <CardContent className={classes.CardContent}>
+                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                      Espaço estetica e bem estar 
+                    </Typography>
+                    <Typography variant="h5" component="h2">
+                      <Link href="/details">
+                        Designer com renna 
+                      </Link>
+                    </Typography>
+                    <Typography variant="body2" component="p">
+                      Remoção dos cravos abertos e fechados, nutrição , renovação celular, aparelho de alta frequência. 
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+              
+              <Grid item xs={6} sm={3}>
+                <Card className={classes.root} variant="outlined">
+                  <CardMedia
+                    className={classes.media}
+                    image="http://aomercado.com.br/storage/images/image/1606351760.png"
+                    title="Paella dish"
+                  />
+                  <CardContent className={classes.CardContent}>
+                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                      Espaço estetica e bem estar 
+                    </Typography>
+                    <Typography variant="h5" component="h2">
+                      Designer com renna 
+                    </Typography>
+                    <Typography variant="body2" component="p">
+                      Remoção dos cravos abertos e fechados, nutrição , renovação celular, aparelho de alta frequência. 
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+              <Grid item xs={6} sm={3}>
+                <Card className={classes.root} variant="outlined">
+                  <CardMedia
+                    className={classes.media}
+                    image="http://aomercado.com.br/storage/images/image/1606351760.png"
+                    title="Paella dish"
+                  />
+                  <CardContent className={classes.CardContent}>
+                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                      Espaço estetica e bem estar 
+                    </Typography>
+                    <Typography variant="h5" component="h2">
+                      Designer com renna 
+                    </Typography>
+                    <Typography variant="body2" component="p">
+                      Remoção dos cravos abertos e fechados, nutrição , renovação celular, aparelho de alta frequência. 
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+              <Grid item xs={6} sm={3}>
+                <Card className={classes.root} variant="outlined">
+                  <CardMedia
+                    className={classes.media}
+                    image="http://aomercado.com.br/storage/images/image/1606351760.png"
+                    title="Paella dish"
+                  />
+                  <CardContent className={classes.CardContent}>
+                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                      Espaço estetica e bem estar 
+                    </Typography>
+                    <Typography variant="h5" component="h2">
+                      Designer com renna 
+                    </Typography>
+                    <Typography variant="body2" component="p">
+                      Remoção dos cravos abertos e fechados, nutrição , renovação celular, aparelho de alta frequência. 
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+
+              <Grid item xs={6} sm={3}>
+                <Card className={classes.root} variant="outlined">
+                  <CardMedia
+                    className={classes.media}
+                    image="http://aomercado.com.br/storage/images/image/1606351760.png"
+                    title="Paella dish"
+                  />
+                  <CardContent className={classes.CardContent}>
+                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                      Espaço estetica e bem estar 
+                    </Typography>
+                    <Typography variant="h5" component="h2">
+                      Designer com renna 
+                    </Typography>
+                    <Typography variant="body2" component="p">
+                      Remoção dos cravos abertos e fechados, nutrição , renovação celular, aparelho de alta frequência. 
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+
+              <Grid item xs={6} sm={3}>
+                <Card className={classes.root} variant="outlined">
+                  <CardMedia
+                    className={classes.media}
+                    image="http://aomercado.com.br/storage/images/image/1606351760.png"
+                    title="Paella dish"
+                  />
+                  <CardContent className={classes.CardContent}>
+                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                      Espaço estetica e bem estar 
+                    </Typography>
+                    <Typography variant="h5" component="h2">
+                      Designer com renna 
+                    </Typography>
+                    <Typography variant="body2" component="p">
+                      Remoção dos cravos abertos e fechados, nutrição , renovação celular, aparelho de alta frequência. 
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+
+              <Grid item xs={6} sm={3}>
+                <Card className={classes.root} variant="outlined">
+                  <CardMedia
+                    className={classes.media}
+                    image="http://aomercado.com.br/storage/images/image/1606351760.png"
+                    title="Paella dish"
+                  />
+                  <CardContent className={classes.CardContent}>
+                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                      Espaço estetica e bem estar 
+                    </Typography>
+                    <Typography variant="h5" component="h2">
+                      Designer com renna 
+                    </Typography>
+                    <Typography variant="body2" component="p">
+                      Remoção dos cravos abertos e fechados, nutrição , renovação celular, aparelho de alta frequência. 
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+
+              <Grid item xs={6} sm={3}>
+                <Card className={classes.root} variant="outlined">
+                  <CardMedia
+                    className={classes.media}
+                    image="http://aomercado.com.br/storage/images/image/1606351760.png"
+                    title="Paella dish"
+                  />
+                  <CardContent className={classes.CardContent}>
+                    <Typography className={classes.title} color="textSecondary" gutterBottom>
+                      Espaço estetica e bem estar 
+                    </Typography>
+                    <Typography variant="h5" component="h2">
+                      Designer com renna 
+                    </Typography>
+                    <Typography variant="body2" component="p">
+                      Remoção dos cravos abertos e fechados, nutrição , renovação celular, aparelho de alta frequência. 
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+              
+              
+            </Grid>
+          </Container>
+        
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
     </div>
   )
 }
