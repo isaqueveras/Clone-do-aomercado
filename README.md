@@ -7,4 +7,4 @@ npm run dev
 yarn dev
 ```
 
-O projeto abrirá em [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado.
+O projeto abrirá em [http://localhost:3000](http://localhost:3000) no seu navegador para você ver o resultado.
